@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Alphabetical"
+msgstr ""
+
+msgid "Hello"
+msgstr ""
+
+msgid "Hello Phonecat"
+msgstr ""
+
+msgid "Newest"
+msgstr ""
+
+msgid "Search:"
+msgstr ""
+
+msgid "Sort by:"
+msgstr ""
+
+msgid "soundJs"
+msgstr ""
+
+msgid "world"
+msgstr ""

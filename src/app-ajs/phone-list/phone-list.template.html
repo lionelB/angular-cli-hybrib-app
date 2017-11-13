@@ -1,20 +1,21 @@
 <div class="container-fluid">
+  <h1>{{title}}</h1>
   <div class="row">
     <canvas id="createjs" height="400" width="400"></canvas>
-    <button ng-click="$ctrl.zum()">soundJs</button>
+    <button ng-click="$ctrl.zum()" translate>soundJs</button>
     <div class="col-md-2">
       <!--Sidebar content-->
 
       <p>
-        Search:
+        <span translate>Search:</span>
         <input ng-model="$ctrl.query" />
       </p>
 
       <p>
-        Sort by:
+        <span translate>Sort by:</span>
         <select ng-model="$ctrl.orderProp">
-          <option value="name">Alphabetical</option>
-          <option value="age">Newest</option>
+          <option value="name" translate>Alphabetical</option>
+          <option value="age" translate>Newest</option>
         </select>
       </p>
 

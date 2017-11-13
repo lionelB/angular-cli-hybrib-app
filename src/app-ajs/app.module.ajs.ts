@@ -4,6 +4,7 @@ import * as angular from 'angular';
 import 'angular-animate';
 import 'angular-resource';
 import 'angular-route';
+import 'angular-gettext';
 
 import './core/core.module';
 import './phone-detail/phone-detail.module';
@@ -15,6 +16,7 @@ export const phonecatApp = angular.module('phonecatApp', [
   'ngRoute',
   'core',
   'phoneDetail',
-  'phoneList'
+  'phoneList',
+  'gettext'
 ]).name;
 
