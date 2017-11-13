@@ -4,9 +4,15 @@ angular.module('phonecatApp').animation('.phone', () => ({
   addClass: animateIn,
   removeClass: animateOut
 }));
+type JQueryAnim = JQuery & {
+  animate: (prop: any, done: Function) => void,
+  stop: () => void
+};
 
-function animateIn(element: JQuery, className: string, done: Function, options: angular.animate.IAnimationOptions) {
-  if (className !== 'selected') return;
+function animateIn(element: JQueryAnim, className: string, done: Function, options: angular.animate.IAnimationOptions) {
+  if (className !== 'selected') {
+    return;
+  }
 
   element.css({
     display: 'block',
@@ -18,12 +24,16 @@ function animateIn(element: JQuery, className: string, done: Function, options: 
   }, done);
 
   return function animateInEnd(wasCanceled: boolean) {
-    if (wasCanceled) element.stop();
+    if (wasCanceled) {
+      element.stop();
+    }
   };
 }
 
-function animateOut(element: JQuery, className: string, done: Function, options: angular.animate.IAnimationOptions) {
-  if (className !== 'selected') return;
+function animateOut(element: JQueryAnim, className: string, done: Function, options: angular.animate.IAnimationOptions) {
+  if (className !== 'selected') {
+    return;
+  }
 
   element.css({
     position: 'absolute',
@@ -34,7 +44,9 @@ function animateOut(element: JQuery, className: string, done: Function, options:
   }, done);
 
   return function animateOutEnd(wasCanceled: boolean) {
-    if (wasCanceled) element.stop();
+    if (wasCanceled) {
+      element.stop();
+    }
   };
 }
 */

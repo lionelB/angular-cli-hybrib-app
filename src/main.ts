@@ -6,8 +6,13 @@ import { environment } from './environments/environment';
 
 // Import these globally to bring in their @types
 import * as angular from 'angular';
-import './app-ajs';
+import 'angular';
+import 'angular-animate';
+import 'angular-resource';
+import 'angular-route';
 
+// Need to import NG 1.x module
+import './app-ajs';
 
 setAngularLib(angular);
 
