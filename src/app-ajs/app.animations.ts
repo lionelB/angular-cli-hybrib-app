@@ -1,5 +1,5 @@
 'use strict';
-
+/**
 angular.module('phonecatApp').animation('.phone', () => ({
   addClass: animateIn,
   removeClass: animateOut
@@ -37,3 +37,4 @@ function animateOut(element: JQuery, className: string, done: Function, options:
     if (wasCanceled) element.stop();
   };
 }
+*/

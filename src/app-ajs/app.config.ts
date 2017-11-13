@@ -1,5 +1,4 @@
 'use strict';
-import * as angular from 'angular';
 
 angular.
   module('phonecatApp').
@@ -14,6 +13,6 @@ angular.
         when('/phones/:phoneId', {
           template: '<phone-detail></phone-detail>'
         }).
-        otherwise('/phones');
+        otherwise({ redirectTo: '/phones'});
     }
   ]);
