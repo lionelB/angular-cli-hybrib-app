@@ -6,17 +6,22 @@ import 'angular-resource';
 import 'angular-route';
 import 'angular-gettext';
 
-import './core/core.module';
-import './phone-detail/phone-detail.module';
-import './phone-list/phone-list.module';
+import { coreModule } from './core/core.module';
+import { phoneDetailModule } from 'app-ajs/phone-detail/phone-detail.module';
+import { phoneListModule } from 'app-ajs/phone-list/phone-list.module';
+import { configPhonecatApp } from 'app-ajs/app.config';
+import { phoneAnim } from 'app-ajs/app.animations';
 
 // Define the `phonecatApp` module
 export const phonecatApp = angular.module('phonecatApp', [
   'ngAnimate',
   'ngRoute',
-  'core',
-  'phoneDetail',
-  'phoneList',
+  coreModule,
+  phoneDetailModule,
+  phoneListModule,
   'gettext'
-]).name;
+])
+.config(configPhonecatApp)
+.animation('.phone', phoneAnim)
+.name;
 

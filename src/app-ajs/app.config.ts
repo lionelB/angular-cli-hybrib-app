@@ -1,18 +1,14 @@
-'use strict';
+export const configPhonecatApp = ['$locationProvider' , '$routeProvider',
+  function config($locationProvider: angular.ILocationProvider, $routeProvider: angular.route.IRouteProvider) {
+    $locationProvider.hashPrefix('!');
 
-angular.
-  module('phonecatApp').
-  config(['$locationProvider' ,'$routeProvider',
-    function config($locationProvider: angular.ILocationProvider, $routeProvider: angular.route.IRouteProvider) {
-      $locationProvider.hashPrefix('!');
-
-      $routeProvider.
-        when('/phones', {
-          template: '<phone-list></phone-list>'
-        }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
-        }).
-        otherwise({ redirectTo: '/phones'});
-    }
-  ]);
+    $routeProvider.
+      when('/phones', {
+        template: '<phone-list></phone-list>'
+      }).
+      when('/phones/:phoneId', {
+        template: '<phone-detail></phone-detail>'
+      }).
+      otherwise({ redirectTo: '/phones'});
+  }
+];

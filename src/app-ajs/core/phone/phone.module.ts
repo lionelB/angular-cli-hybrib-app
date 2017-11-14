@@ -1,4 +1,9 @@
-'use strict';
+import * as angular from 'angular';
+import * as ngRessource from 'angular-resource';
+import { PhoneFactory } from './phone.service';
 
 // Define the `core.phone` module
-angular.module('core.phone', ['ngResource']);
+export const corePhoneModule = angular
+  .module('core.phone', [ngRessource])
+  .factory('Phone', PhoneFactory )
+  .name;

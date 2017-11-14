@@ -1,10 +1,8 @@
-'use strict';
-
 import * as angular from 'angular';
 import * as createjs from 'createjs-module';
 
 // Register `phoneList` component, along with its associated controller and template
-class PhoneList {
+export class PhoneList {
   static $inject = ['Phone', 'gettextCatalog', 'gettext'];
   title: string;
   phones: any;
@@ -21,9 +19,6 @@ class PhoneList {
     this.gettextCatalog.setCurrentLanguage(lang);
     this.gettextCatalog.loadRemote(`/assets/i18n/${lang}.json`);
 
-
-
-    console.log({createjs});
     const stage = new createjs.Stage('createjs');
     const shape = new createjs.Shape();
     shape.graphics.beginFill('red').drawRect(0, 0, 120, 120);
@@ -43,9 +38,8 @@ class PhoneList {
   }
 }
 
-angular.
-  module('phoneList').
-  component('phoneList', {
-    template: require('./phone-list.template.html'),
-    controller: PhoneList
-  });
+export const PhoneListComponent = {
+  template: require('./phone-list.template.html'),
+  controller: PhoneList
+};
+
