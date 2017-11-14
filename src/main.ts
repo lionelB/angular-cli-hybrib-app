@@ -6,13 +6,9 @@ import { environment } from './environments/environment';
 
 // Import these globally to bring in their @types
 import * as angular from 'angular';
-import 'angular';
-import 'angular-animate';
-import 'angular-resource';
-import 'angular-route';
 
 // Need to import NG 1.x module
-import './app-ajs';
+import { phonecatApp } from 'app-ajs/app.module.ajs';
 
 setAngularLib(angular);
 
@@ -22,5 +18,5 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
   const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
-  upgrade.bootstrap(document.documentElement, ['phonecatApp']);
+  upgrade.bootstrap(document.documentElement, [phonecatApp]);
 });
