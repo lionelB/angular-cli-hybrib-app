@@ -12,7 +12,7 @@
     "prei18n-extract-ajs": "tsc src/app-ajs/**/*.ts --outdir temp-i18n",
     "i18n-extract-ajs": "angular-gettext-cli --files '{temp-i18n/**/*.js,src/app-ajs/**/*.html}' --exclude '**/*.spec.js' --dest 'src/assets/i18n/extracted.pot'",
     "posti18n-extract-ajs": "del ./temp-i18n",
-    "i18n-extract-app": "ngx-translate-extract --input ./src/app --output ./src/assets/i18n/extracted.pot --sort --format pot",
+    "i18n-extract-app": "ngx-translate-extract --input ./src/app --output ./src/assets/i18n/extracted.pot --sort --format pot -m _",
     "i18n-extract": "npm run i18n-extract-ajs && npm run i18n-extract-app",
     "i18n-compile": "find src -name *.po | cut -f1 -d. | xargs -I '{}' angular-gettext-cli --compile --files '{}'.po --dest '{}'.json --format json"
   },

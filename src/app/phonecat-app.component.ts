@@ -15,6 +15,6 @@ export class PhonecatAppComponent {
 
      // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use('fr');
-    this.title = _('Hello') as string;
+    translate.get(_('Hello There')).subscribe((val) => this.title = val);
   }
 }

@@ -13,6 +13,9 @@ msgstr ""
 msgid "Hello Phonecat"
 msgstr ""
 
+msgid "Hello There"
+msgstr ""
+
 msgid "Newest"
 msgstr ""
 
