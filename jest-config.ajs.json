@@ -1,0 +1,24 @@
+{
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/app-ajs/**/*.ts",
+    "!src/app/**/*.ts",
+    "!src/**/*.spec.ts",
+    "!src/environments/**",
+    "!src/**/*.d.ts"
+  ],
+  "coverageDirectory": "reports/coverage-ajp",
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/src/environments"
+  ],
+  "roots": [
+    "<rootDir>/src/app-ajs"
+  ],
+  "preset": "jest-preset-angular",
+  "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ajs.ts",
+  "testResultsProcessor": "./node_modules/jest-junit",
+  "transform": {
+    "^.+\\.(ts|js|html)$": "<rootDir>/node_modules/ts-jest/preprocessor.js",
+    "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/fileTransformer.js"
+  }
+}

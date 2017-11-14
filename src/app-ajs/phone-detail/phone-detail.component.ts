@@ -1,20 +1,19 @@
-'use strict';
+export class PhoneDetailController {
+  static $inject = ['$routeParams', 'Phone'];
+  phone: any;
+  mainImageUrl: string;
 
-// Register `phoneDetail` component, along with its associated controller and template
-angular.
-  module('phoneDetail').
-  component('phoneDetail', {
-    template: require('./phone-detail.template.html'),
-    controller: ['$routeParams', 'Phone',
-      function PhoneDetailController($routeParams, Phone) {
-        var self = this;
-        self.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone: any) {
-          self.setImage(phone.images[0]);
-        });
+  constructor( private $routeParams, private Phone) {
+    this.phone = Phone.get({phoneId: $routeParams.phoneId}, (phone: any) => {
+      this.setImage(phone.images[0]);
+    });
+  }
+  setImage(imageUrl: any) {
+    this.mainImageUrl = imageUrl;
+  }
+}
 
-        self.setImage = function setImage(imageUrl: any) {
-          self.mainImageUrl = imageUrl;
-        };
-      }
-    ]
-  });
+export const phoneDetailComponent = {
+  template: require('./phone-detail.template.html'),
+  controller: PhoneDetailController
+};

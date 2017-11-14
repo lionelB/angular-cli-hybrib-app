@@ -1,9 +1,8 @@
-'use strict';
-/**
-angular.module('phonecatApp').animation('.phone', () => ({
+export const phoneAnim = () => ({
   addClass: animateIn,
   removeClass: animateOut
-}));
+});
+
 type JQueryAnim = JQuery & {
   animate: (prop: any, done: Function) => void,
   stop: () => void
@@ -49,4 +48,3 @@ function animateOut(element: JQueryAnim, className: string, done: Function, opti
     }
   };
 }
-*/
